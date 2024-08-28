@@ -10,6 +10,7 @@ import Tailwind from './imgs/tailwindcss.svg';
 import Git from './imgs/github-light.svg';
 import ProyectoFoto from './imgs/tiendafoto.jpg';
 import MiFoto from './imgs/miyo.jpg';
+import TypingEffect from './TypingEffect';
 
 const TimelineItem = ({ year, title, description, icon: Icon, isLeft }) => (
     <div className={`w-full md:w-1/2 ${isLeft ? 'pr-8' : 'pl-8'}`}>
@@ -129,7 +130,7 @@ const Portfolio = () => {
             src={MiFoto}
             alt="Tu foto"
           />
-          <h1 className="mt-4 text-4xl font-bold">Manu Cuesta Rodriguez</h1>
+          <h1 className="text-3xl font-bold mt-4">Tu Nombre</h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-400">Desarrollador Web</p>
           <div className="mt-4 flex justify-center space-x-4">
             {[Github, Linkedin, Mail].map((Icon, index) => (
