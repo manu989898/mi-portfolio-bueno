@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       colors: {
         // Puedes personalizar o extender los colores aquí
+        //whant h3 color white text 
+        
+
       },
       fontFamily: {
         // Puedes añadir fuentes personalizadas aquí

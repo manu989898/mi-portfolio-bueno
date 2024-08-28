@@ -19,7 +19,7 @@ const TimelineItem = ({ year, title, description, icon: Icon }) => (
     {
       title: "Proyecto 1",
       description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-      image: "public/images/hola.jpg" // Ruta de la imagen
+      image: "/path/to/your/image2.jpg" // Ruta de la imagen
     },
     {
       title: "Proyecto 2",
@@ -38,13 +38,6 @@ const TimelineItem = ({ year, title, description, icon: Icon }) => (
     },
   ];
   
-const Portfolio = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   const timelineData = [
     {
       year: "2023",
@@ -66,6 +59,13 @@ const Portfolio = () => {
     },
     // Puedes añadir más elementos aquí
   ];
+const Portfolio = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
 
 
   return (
@@ -83,7 +83,7 @@ const Portfolio = () => {
             src="/api/placeholder/128/128"
             alt="Tu foto"
           />
-          <h1 className="mt-4 text-4xl font-bold">Tu Nombre</h1>
+          <h1 className="mt-4 text-4xl font-bold">Manu Cuesta Rodriguez</h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-400">Desarrollador Web</p>
           <div className="mt-4 flex justify-center space-x-4">
             {[Github, Linkedin, Mail].map((Icon, index) => (
@@ -100,15 +100,15 @@ const Portfolio = () => {
 
         <main>
           <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
-            <h2 className="text-2xl font-bold mb-4">Sobre mí</h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              Soy un desarrollador web apasionado por crear experiencias digitales increíbles.
-              Me especializo en React, Node.js y diseño de UI/UX.
-            </p>
-          </section>
+  <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Sobre mí</h2>
+  <p className="text-gray-700 dark:text-gray-300">
+    Soy un desarrollador web apasionado por crear experiencias digitales increíbles.
+    Me especializo en React, Node.js y diseño de UI/UX.
+  </p>
+</section>
 
-          <section className="mb-12">
-  <h2 className="text-2xl font-bold mb-4">Proyectos</h2>
+<section className="mb-12">
+<h2 className="text-2xl font-bold mb-4">Proyectos</h2>
   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
     {projects.map((project, index) => (
       <div
@@ -123,7 +123,7 @@ const Portfolio = () => {
           />
         )}
         <div className="p-5">
-          <h3 className="text-lg font-medium">{project.title}</h3>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             {project.description}
           </p>
@@ -147,7 +147,7 @@ const Portfolio = () => {
             </div>
           </section>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-8">Experiencia y Educación</h2>
+            <h2 className="text-2xl font-bold mb-8 my-12">Experiencia y Educación</h2>
             <div className="container mx-auto w-full h-full">
               <div className="relative wrap overflow-hidden p-10 h-full">
                 <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
