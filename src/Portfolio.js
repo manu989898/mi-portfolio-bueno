@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Sun, Moon, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Mail, Sun, Moon, Briefcase, GraduationCap, Import } from 'lucide-react';
 import MySVG from './imgs/mysql.svg';
 import Css from './imgs/css.svg';
 import Html from './imgs/html5.svg';
@@ -10,7 +10,10 @@ import Tailwind from './imgs/tailwindcss.svg';
 import Git from './imgs/github-light.svg';
 import ProyectoFoto from './imgs/tiendafoto.jpg';
 import MiFoto from './imgs/miyo.jpg';
-import TypingEffect from './TypingEffect';
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
+
+import PillTabs from './PillTabs';
 
 const TimelineItem = ({ year, title, description, icon: Icon, isLeft }) => (
     <div className={`w-full md:w-1/2 ${isLeft ? 'pr-8' : 'pl-8'}`}>
@@ -31,81 +34,73 @@ const projects = [
     title: "Proyecto 1",
     description: "Breve descripción del proyecto y las tecnologías utilizadas.",
     image: ProyectoFoto,
+    category: "java",
   },
   {
     title: "Proyecto 2",
     description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: "/path/to/your/image2.jpg"
+    image: "/path/to/your/image2.jpg",
+    category: "javascript",
   },
   {
     title: "Proyecto 3",
     description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: "/path/to/your/image3.jpg"
+    image: "/path/to/your/image3.jpg",
+    category: "react",
+
   },
   {
     title: "Proyecto 4",
     description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: "/path/to/your/image4.jpg"
+    image: "/path/to/your/image4.jpg",
+    category: "mysql",
   },
 ];
 
 const timelineData = [
   {
     education: {
-      year: "2022",
-      title: "Grado en Ingeniería Informática",
-      description: "Me gradué con honores de la Universidad XYZ, especializándome en desarrollo de software y sistemas distribuidos.",
+      year: "2015",
+      title: "Técnico en Electromecánica de vehiculos",
+      description: "IES Son Pacs 2015 - 2017 Grado medio de FP de mecánico de vehiculos y automoviles.",
       icon: GraduationCap
     },
     experience: {
-      year: "2023",
-      title: "Desarrollador Full Stack",
-      description: "Trabajé en proyectos utilizando React, Node.js y MongoDB. Implementé soluciones escalables para clientes de diversos sectores.",
+      year: "2017",
+      title: "Mecánico oficial concesionario Jaguar & Land Rover",
+      description: "One Motors 2017 - 2019 Mecánico de automoviles, hacia tanto mecánica pesada como mecánica rápida, sistemas de frenos e hidráulica.",
       icon: Briefcase
     }
   },
   {
     education: {
-      year: "2020",
-      title: "Curso de Desarrollo Web Full Stack",
-      description: "Completé un bootcamp intensivo en desarrollo web, aprendiendo las últimas tecnologías y mejores prácticas de la industria.",
+      year: "2017",
+      title: "Certificado Nivel 2, Jaguar & Land Rover",
+      description: "2017 - 2018 Certificación oficial para podere trabajar en categoria superior para la marca Jaguar & Land Rover",
       icon: GraduationCap
     },
     experience: {
-      year: "2021",
-      title: "Prácticas en Empresa Tech",
-      description: "Realicé prácticas de verano desarrollando aplicaciones web. Colaboré en un equipo ágil y mejoré mis habilidades técnicas y de comunicación.",
+      year: "2019",
+      title: "Mecánico oficial concesionario Hyundai",
+      description: "Proa Automoción 2019 - 2020 Mecánico de automoviles, hacia tanto mecánica pesada como mecánica rápida, sistemas de frenos e hidráulica.",
       icon: Briefcase
     }
   },
   {
     education: {
-      year: "2022",
-      title: "Grado en Ingeniería Informática",
-      description: "Me gradué con honores de la Universidad XYZ, especializándome en desarrollo de software y sistemas distribuidos.",
+      year: "2024",
+      title: "Grado superior Desarrollo de aplicaciones web",
+      description: "IES Son Ferrer 2023 - 2025 Grado superior en desarrollo de aplicaciones web. Enfocado en el uso de lenguajes de programación para ese campo.",
       icon: GraduationCap
     },
     experience: {
-      year: "2023",
-      title: "Desarrollador Full Stack",
-      description: "Trabajé en proyectos utilizando React, Node.js y MongoDB. Implementé soluciones escalables para clientes de diversos sectores.",
+      year: "2024",
+      title: "Técnico en sistemas de seguridad y videovigilancia",
+      description: "Alpha Seguridad 2020 - 2024 Tecnico de sistemas de seguridad y videovigilancia para la empresa mas grande de Mallorca.",
       icon: Briefcase
     }
   },
-  {
-    education: {
-      year: "2020",
-      title: "Curso de Desarrollo Web Full Stack",
-      description: "Completé un bootcamp intensivo en desarrollo web, aprendiendo las últimas tecnologías y mejores prácticas de la industria.",
-      icon: GraduationCap
-    },
-    experience: {
-      year: "2021",
-      title: "Prácticas en Empresa Tech",
-      description: "Realicé prácticas de verano desarrollando aplicaciones web. Colaboré en un equipo ágil y mejoré mis habilidades técnicas y de comunicación.",
-      icon: Briefcase
-    }
-  },
+  
 ];
 
 const Portfolio = () => {
@@ -114,11 +109,22 @@ const Portfolio = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const filteredProjects = selectedCategory
+    ? projects.filter(project => project.category === selectedCategory)
+    : projects;
+  
+  
+  const [text] = useTypewriter({
+    words: ['Manuel Cuesta Rodriguez'],
+    loop: 1,
+  });
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <header className="text-center mb-12 relative">
+      <header className="text-center mb-12 relative">
           <button
             onClick={toggleDarkMode}
             className="absolute top-0 right-0 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 transform hover:scale-110 border-2 border-gray-700 dark:border-gray-400"
@@ -130,7 +136,10 @@ const Portfolio = () => {
             src={MiFoto}
             alt="Tu foto"
           />
-          <h1 className="text-3xl font-bold mt-4">Tu Nombre</h1>
+          <h1 className="text-3xl font-bold mt-4">
+            {text}
+            <Cursor cursorStyle='|' />
+          </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-400">Desarrollador Web</p>
           <div className="mt-4 flex justify-center space-x-4">
             {[Github, Linkedin, Mail].map((Icon, index) => (
@@ -149,39 +158,45 @@ const Portfolio = () => {
           <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Sobre mí</h2>
             <p className="text-gray-700 dark:text-gray-300">
-              Soy un desarrollador web apasionado por crear experiencias digitales increíbles.
-              Me especializo en React, Node.js y diseño de UI/UX.
+            Hola, soy Manu. Un desarrollador de aplicaciones web con una pasión por crear experiencias digitales innovadoras y eficientes. Me encanta trabajar en equipo y estoy siempre en busca de nuevos desafíos para mejorar mis habilidades y aprender nuevas tecnologías. El campo que más me gusta es el "backend".
             </p>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Proyectos</h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              {projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03]"
-                >
-                  {project.image && (
-                    <img
-                      src={project.image}
-                      alt={`Imagen del ${project.title}`}
-                      className="w-full h-48 object-cover"
-                    />
-                  )}
-                  <div className="p-5">
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
-                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+
+<section className="mt-8">
+  <h2 className="text-2xl font-bold mb-4">Proyectos </h2>
+          <PillTabs onTabClick={setSelectedCategory} />
+  <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+    {filteredProjects.length > 0 ? (
+      filteredProjects.map((project, index) => (
+        <div
+          key={index}
+          className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] mb-4"
+        >
+          {project.image && (
+            <img
+              src={project.image}
+              alt={`Imagen del ${project.title}`}
+              className="w-full h-48 object-cover"
+            />
+          )}
+          <div className="p-5">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              {project.description}
+            </p>
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>No hay proyectos disponibles en esta categoría.</p>
+    )}
+  </div>
+</section>
+
 
           <section className="mb-12">
-  <h2 className="text-2xl font-bold mb-4">Habilidades</h2>
+  <h2 className="text-2xl font-bold mb-4 ">Habilidades</h2>
   <div className="flex flex-wrap gap-4">
     {[
       { icon: MySVG, name: 'MySQL' },
@@ -198,20 +213,20 @@ const Portfolio = () => {
         className="flex flex-col items-center justify-center bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 p-2 rounded-full transition-transform duration-250 hover:scale-110 w-24 h-24"
       >
         <img src={skill.icon} alt={`${skill.name} Icon`} className="w-8 h-8" />
-        <p className="mt-1 text-xs font-semibold text-center">{skill.name}</p>
+        <p className="mt-1 text-sm font-semibold text-center">{skill.name}</p>
       </span>
     ))}
   </div>
 </section>
 
-          <section className="mb-12">
+<section className="mb-12">
             <h2 className="text-3xl font-bold mb-8 text-center">Experiencia y Educación</h2>
             <div className="container mx-auto w-full">
               <div className="relative wrap overflow-hidden">
                 <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
                 
                 {timelineData.map((item, index) => (
-                  <div key={index} className="mb-8 flex justify-between items-center w-full">
+                  <div key={index} className="mb-8 flex justify-between items-stretch w-full">
                     <TimelineItem {...item.education} isLeft={true} />
                     <TimelineItem {...item.experience} isLeft={false} />
                   </div>

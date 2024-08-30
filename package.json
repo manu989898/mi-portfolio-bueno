@@ -9,7 +9,9 @@
     "lucide-react": "^0.436.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-magic-motion": "^1.1.2",
     "react-scripts": "5.0.1",
+    "react-simple-typewriter": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
