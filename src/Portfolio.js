@@ -167,7 +167,10 @@ const Portfolio = () => {
             </div>
           ))
         ) : (
-          <p>No hay proyectos disponibles en esta categoría.</p>
+          <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">No hay proyectos disponibles</h2>
+            
+          </section>
         )}
       </div>
     </section>

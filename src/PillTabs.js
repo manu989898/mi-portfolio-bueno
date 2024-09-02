@@ -12,6 +12,7 @@ import Spring from './imgs/spring.svg';
 import Git from './imgs/github-light.svg';
 import Todos from './imgs/all.svg';
 
+// Aquí definimos todas las pestañas o "pill tabs" con sus respectivas categorías e íconos.
 const pillTabs = [
   { label: "Todos", category: null, icon: Todos },
   { label: "Java", category: "java", icon: Java },
@@ -28,24 +29,45 @@ const pillTabs = [
 ];
 
 export function PillTabs({ onTabClick }) {
-  const scrollContainerRef = useRef(null);
+  // Estados para manejar qué pestaña está seleccionada y cuál está siendo "hovered" (sobrevolada).
+  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const tabsComponents = pillTabs.map((tab) => {
+  // Aquí creamos el componente de cada pestaña basándonos en los datos de `pillTabs`.
+  const tabsComponents = pillTabs.map((tab, i) => {
+    const isSelected = selectedIndex === i; // Verifica si esta pestaña es la seleccionada.
+    const isHovered = hoveredIndex === i;  // Verifica si esta pestaña está siendo sobrevolada.
+
     return (
       <button
-        key={tab.label}
+        key={tab.label} // Clave única para cada botón de pestaña.
+        onMouseEnter={() => setHoveredIndex(i)} // Cambia el índice de "hover" cuando el mouse entra en la pestaña.
         onClick={() => {
-          onTabClick(tab.category);
+          onTabClick(tab.category); // Llama a la función de selección con la categoría de la pestaña.
+          setSelectedIndex(i); // Marca esta pestaña como seleccionada.
         }}
-        className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-medium text-lg transition-all duration-300 whitespace-nowrap bg-blue-200 text-blue-900 dark:bg-blue-800 dark:text-blue-300`}
+        className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+          isSelected
+            ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+            : "bg-blue-200 text-blue-900 dark:bg-blue-800 dark:text-blue-300"
+        }`}
         style={{
-          minWidth: '40px', // Aumenta el tamaño mínimo para pantallas pequeñas
-          padding: '10px', // Asegura que haya suficiente espacio interno
-          fontSize: '14px', // Ajusta el tamaño de la fuente para que sea más legible en pantallas pequeñas
+          backgroundColor: isHovered
+            ? 'rgb(59, 130, 246)' // Cambia el color si el mouse está sobre la pestaña.
+            : isSelected
+            ? '' // Usa el color de Tailwind si la pestaña está seleccionada.
+            : 'rgb(191, 219, 254)', // Color por defecto si la pestaña no está seleccionada ni sobrevolada.
+          color: isHovered
+            ? 'rgb(191, 219, 254)' // Cambia el color del texto si el mouse está sobre la pestaña.
+            : isSelected
+            ? '' // Deja el color por defecto si está seleccionada.
+            : '', 
+          minWidth: '40px', // Tamaño mínimo del botón.
+          padding: '10px', // Espaciado interno para asegurar que los íconos y texto no estén muy apretados.
+          fontSize: '14px', // Ajusta el tamaño del texto.
         }}
       >
         <img src={tab.icon} alt={`${tab.label} icon`} className="w-5 h-5 md:w-6 md:h-6" />
-      
       </button>
     );
   });
@@ -53,10 +75,9 @@ export function PillTabs({ onTabClick }) {
   return (
     <div
       className="relative overflow-x-auto scrollbar-hide scrollable-tabs"
-      ref={scrollContainerRef}
     >
       <div className="flex gap-3 my-3">
-        {tabsComponents}
+        {tabsComponents} {/* Renderiza todas las pestañas que definimos arriba. */}
       </div>
     </div>
   );

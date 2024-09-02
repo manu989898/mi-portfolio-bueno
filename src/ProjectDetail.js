@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
-import projects from './projects';
+import projects from './projects'; // Importamos los proyectos definidos en otro archivo.
 import Java from './imgs/java.svg';
 import JavaScript from './imgs/javascript.svg';
 import ReactLogo from './imgs/react.svg';
@@ -14,6 +14,7 @@ import Redux from './imgs/redux.svg';
 import Spring from './imgs/spring.svg';
 import Git from './imgs/github-light.svg';
 
+// Definimos un objeto que asocia tecnologías con sus íconos y nombres.
 const technologies = {
   java: { name: "Java", icon: Java },
   javascript: { name: "JavaScript", icon: JavaScript },
@@ -29,17 +30,17 @@ const technologies = {
 };
 
 const ProjectDetail = () => {
-  const { projectId } = useParams();
-  const project = projects.find(p => p.id === parseInt(projectId, 10));
+  const { projectId } = useParams(); // Obtiene el ID del proyecto de la URL.
+  const project = projects.find(p => p.id === parseInt(projectId, 10)); // Busca el proyecto correspondiente.
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false); // Estado para manejar el modo oscuro.
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(!darkMode); // Alterna entre modo oscuro y claro.
   };
 
   if (!project) {
-    return <div>Proyecto no encontrado</div>;
+    return <div>Proyecto no encontrado</div>; // Si no se encuentra el proyecto, mostramos un mensaje.
   }
 
   // Encuentra el índice del proyecto actual en el array
@@ -57,7 +58,7 @@ const ProjectDetail = () => {
             onClick={toggleDarkMode}
             className="absolute top-0 right-0 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 transform hover:scale-110 border-2 border-gray-700 dark:border-gray-400"
           >
-            {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+            {darkMode ? <Sun size={24} /> : <Moon size={24} />} {/* Muestra el ícono según el modo */}
           </button>
           <h1 className="text-3xl font-bold">{project.title}</h1>
         </header>
@@ -123,4 +124,4 @@ const ProjectDetail = () => {
   );
 };
 
-export default ProjectDetail;
+export default ProjectDetail
