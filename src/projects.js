@@ -1,4 +1,3 @@
-import ProyectoFoto from './imgs/tiendafoto.jpg';
 
 const projects = [
     {

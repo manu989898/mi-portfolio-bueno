@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, } from "react";
 import Java from './imgs/java.svg';
 import JavaScript from './imgs/javascript.svg';
 import ReactLogo from './imgs/react.svg';

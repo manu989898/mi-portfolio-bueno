@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Sun, Moon, Briefcase, GraduationCap, Import } from 'lucide-react';
+import { Github, Linkedin, Mail, Sun, Moon, Briefcase, GraduationCap, } from 'lucide-react';
 import MySVG from './imgs/mysql.svg';
 import Css from './imgs/css.svg';
 import Html from './imgs/html5.svg';
@@ -117,16 +117,29 @@ const Portfolio = () => {
           </h1>
           <p className="mt-2 text-xl text-gray-600 dark:text-gray-400">Desarrollador Web</p>
           <div className="mt-4 flex justify-center space-x-4">
-            {[Github, Linkedin, Mail].map((Icon, index) => (
-              <a
-                key={index}
-                href="#"
-                className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110"
-              >
-                <Icon size={24} />
-              </a>
-            ))}
-          </div>
+  <a
+    href="https://github.com/manu989898"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110"
+  >
+    <Github size={24} />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/manuel-cuesta-rodriguez/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110"
+  >
+    <Linkedin size={24} />
+  </a>
+  <a
+    href="mailto:apkmanu1@gmail.com"
+    className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110"
+  >
+    <Mail size={24} />
+  </a>
+</div>
         </header>
 
         <main>
