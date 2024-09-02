@@ -1,10 +1,11 @@
-
+import TiendaFoto from './imgs/tiendafoto.jpg';
 const projects = [
     {
       id: 0,
       title: "E-commerce Website",
       description: "Un sitio web de comercio electrónico totalmente funcional, creado con React y Redux, con una integración de API para procesar pagos y manejar la autenticación de usuarios.",
       image: "https://via.placeholder.com/300x200?text=E-commerce+Website",
+      image_description: TiendaFoto,
       category: "react",
       technologies: ["react", "redux", "javascript"],
     },
@@ -13,6 +14,7 @@ const projects = [
       title: "Aplicación de Gestión de Tareas",
       description: "Una aplicación de gestión de tareas que permite a los usuarios crear, editar y eliminar tareas. La aplicación está construida con Java y MySQL para manejar la persistencia de datos.",
       image: "https://via.placeholder.com/300x200?text=Task+Manager+App",
+      image_description: "Imagen de una aplicación de gestión de tareas",
       category: "java",
       technologies: ["java", "mysql", "spring",],
     },
@@ -21,6 +23,7 @@ const projects = [
       title: "Portfolio Personal",
       description: "Un portafolio personal para mostrar mis proyectos y habilidades. Construido con HTML5, CSS3 y JavaScript, utilizando prácticas modernas de diseño web.",
       image: "https://via.placeholder.com/300x200?text=Personal+Portfolio",
+      image_description: "Imagen de un portafolio personal",
       category: "javascript",
       technologies: ["html5", "css3", "javascript"],
     },
@@ -29,6 +32,7 @@ const projects = [
       title: "Sistema de Blogs",
       description: "Un sistema de blogging donde los usuarios pueden crear y compartir artículos. Implementado con React para el frontend y Node.js para el backend.",
       image: "https://via.placeholder.com/300x200?text=Blog+System",
+      image_description: "Imagen de un sistema de blogs",
       category: "nodejs",
       technologies: ["react", "nodejs", "mongodb"],
     },
@@ -37,6 +41,7 @@ const projects = [
         title: "Sistema de Blog",
         description: "Un sistema de blogging donde los usuarios pueden crear y compartir artículos. Implementado con React para el frontend y Node.js para el backend.",
         image: "https://via.placeholder.com/300x200?text=Blog+System",
+        image_description: "Imagen de un sistema de blogs",
         category: "mysql",
         technologies: ["mysql"],
       },

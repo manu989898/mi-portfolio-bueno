@@ -73,6 +73,7 @@ const ProjectDetail = () => {
           )}
           <div className="p-6">
             <p className="text-lg mb-4 text-gray-900 dark:text-white">{project.description}</p>
+            <img src={project.image_description} alt={project.title} className="w-full  " />
             {/* Sección de tecnologías usadas */}
             <div className="mt-6">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Tecnologías usadas</h2>
