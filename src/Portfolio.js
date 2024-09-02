@@ -8,11 +8,10 @@ import JavaScript from './imgs/javascript.svg';
 import ReactLogo from './imgs/react.svg';
 import Tailwind from './imgs/tailwindcss.svg';
 import Git from './imgs/github-light.svg';
-import ProyectoFoto from './imgs/tiendafoto.jpg';
 import MiFoto from './imgs/miyo.jpg';
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-
-
+import { useNavigate } from 'react-router-dom';
+import projects from './projects';
 import PillTabs from './PillTabs';
 
 const TimelineItem = ({ year, title, description, icon: Icon, isLeft }) => (
@@ -29,34 +28,7 @@ const TimelineItem = ({ year, title, description, icon: Icon, isLeft }) => (
   );
   
 
-const projects = [
-  {
-    title: "Proyecto 1",
-    description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: ProyectoFoto,
-    category: "java",
-  },
-  {
-    title: "Proyecto 2",
-    description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: "/path/to/your/image2.jpg",
-    category: "javascript",
-  },
-  {
-    title: "Proyecto 3",
-    description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: "/path/to/your/image3.jpg",
-    category: "react",
-
-  },
-  {
-    title: "Proyecto 4",
-    description: "Breve descripción del proyecto y las tecnologías utilizadas.",
-    image: "/path/to/your/image4.jpg",
-    category: "mysql",
-  },
-];
-
+ 
 const timelineData = [
   {
     education: {
@@ -109,11 +81,14 @@ const Portfolio = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const navigate = useNavigate(); // Hook para navegar
 
   const filteredProjects = selectedCategory
-    ? projects.filter(project => project.category === selectedCategory)
+    ? projects.filter((project) => project.category === selectedCategory)
     : projects;
+
   
   
   const [text] = useTypewriter({
@@ -163,38 +138,57 @@ const Portfolio = () => {
           </section>
 
 
-<section className="mt-8">
-  <h2 className="text-2xl font-bold mb-4">Proyectos </h2>
-          <PillTabs onTabClick={setSelectedCategory} />
-  <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-    {filteredProjects.length > 0 ? (
-      filteredProjects.map((project, index) => (
-        <div
-          key={index}
-          className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] mb-4"
-        >
-          {project.image && (
-            <img
-              src={project.image}
-              alt={`Imagen del ${project.title}`}
-              className="w-full h-48 object-cover"
-            />
-          )}
-          <div className="p-5">
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">{project.title}</h3>
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-              {project.description}
-            </p>
-          </div>
-        </div>
-      ))
-    ) : (
-      <p>No hay proyectos disponibles en esta categoría.</p>
-    )}
-  </div>
-</section>
+          <section className="mt-8">
+      <h2 className="text-2xl font-bold mb-4">Proyectos </h2>
+      <PillTabs onTabClick={setSelectedCategory} />
+      <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] mb-4"
+              onClick={() => navigate(`/project/${index}`)} // Navegar al proyecto correspondiente
+            >
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={`Imagen del ${project.title}`}
+                  className="w-full h-48 object-cover"
+                />
+              )}
+              <div className="p-5">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No hay proyectos disponibles en esta categoría.</p>
+        )}
+      </div>
+    </section>
 
 
+       
+<section className="mb-12">
+            <h2 className="text-3xl font-bold mb-8 text-center">Experiencia y Educación</h2>
+            <div className="container mx-auto w-full">
+              <div className="relative wrap overflow-hidden">
+                <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
+                
+                {timelineData.map((item, index) => (
+                  <div key={index} className="mb-8 flex justify-between items-stretch w-full">
+                    <TimelineItem {...item.education} isLeft={true} />
+                    <TimelineItem {...item.experience} isLeft={false} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
           <section className="mb-12">
   <h2 className="text-2xl font-bold mb-4 ">Habilidades</h2>
   <div className="flex flex-wrap gap-4">
@@ -219,21 +213,6 @@ const Portfolio = () => {
   </div>
 </section>
 
-<section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">Experiencia y Educación</h2>
-            <div className="container mx-auto w-full">
-              <div className="relative wrap overflow-hidden">
-                <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
-                
-                {timelineData.map((item, index) => (
-                  <div key={index} className="mb-8 flex justify-between items-stretch w-full">
-                    <TimelineItem {...item.education} isLeft={true} />
-                    <TimelineItem {...item.experience} isLeft={false} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
         </main>
       </div>
     </div>
