@@ -165,6 +165,7 @@ const Portfolio = () => {
                 </p>
               </div>
             </div>
+            
           ))
         ) : (
           <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
