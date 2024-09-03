@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Portfolio from './Portfolio';
-import ProjectDetail from './ProjectDetail'; // Asegúrate de crear este componente
+import ProjectDetail from '../src/Dependences/ProjectDetail'; // Asegúrate de crear este componente
 
 function App() {
   return (

@@ -1,8 +1,8 @@
-import UrlShort from './imgs/urlshort.JPG';
-import Tienda from './imgs/tienda.JPG';
-import VUrlShort from './videos/URLShortener.mp4';
-import WeatherApp from './videos/WeatherApp.mp4'
-import WeatherFoto from './imgs/weatherapp.JPG'
+import UrlShort from '../imgs/urlshort.JPG';
+import Tienda from '../imgs/tienda.JPG';
+import VUrlShort from '../videos/URLShortener.mp4';
+import WeatherApp from '../videos/WeatherApp.mp4';
+import WeatherFoto from '../imgs/weatherapp.JPG'
 
 const projects = [
   {

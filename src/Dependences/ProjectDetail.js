@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
-import projects from './projects'; // Importamos los proyectos definidos en otro archivo.
-import Java from './imgs/java.svg';
-import JavaScript from './imgs/javascript.svg';
-import ReactLogo from './imgs/react.svg';
-import MySql from './imgs/mysql.svg';
-import Html5 from './imgs/html5.svg';
-import Css3 from './imgs/css.svg';
-import Nodejs from './imgs/nodejs.svg';
-import Mongodb from './imgs/mongodb.svg';
-import Redux from './imgs/redux.svg';
-import Spring from './imgs/spring.svg';
-import Git from './imgs/github-light.svg'; 
-import Tailwind from './imgs/tailwindcss.svg';
+import projects from '../Dependences/projects'; // Importamos los proyectos definidos en otro archivo.
+import Java from '../imgs/java.svg';
+import JavaScript from '../imgs/javascript.svg';
+import ReactLogo from '../imgs/react.svg';
+import MySql from '../imgs/mysql.svg';
+import Html5 from '../imgs/html5.svg';
+import Css3 from '../imgs/css.svg';
+import Nodejs from '../imgs/nodejs.svg';
+import Mongodb from '../imgs/mongodb.svg';
+import Redux from '../imgs/redux.svg';
+import Spring from '../imgs/spring.svg';
+import Git from '../imgs/github-light.svg'; 
+import Tailwind from '../imgs/tailwindcss.svg';
 
 // Definimos un objeto que asocia tecnologías con sus íconos y nombres.
 const technologies = {

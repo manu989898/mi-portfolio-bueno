@@ -1,17 +1,17 @@
 import { useState } from "react";
-import Java from './imgs/java.svg';
-import JavaScript from './imgs/javascript.svg';
-import ReactLogo from './imgs/react.svg';
-import MySql from './imgs/mysql.svg';
-import Html5 from './imgs/html5.svg';
-import Css3 from './imgs/css.svg';
-import Nodejs from './imgs/nodejs.svg';
-import Mongodb from './imgs/mongodb.svg';
-import Redux from './imgs/redux.svg';
-import Spring from './imgs/spring.svg';
-import Git from './imgs/github-light.svg';
-import Todos from './imgs/all.svg';
-import Tailwind from './imgs/tailwindcss.svg';
+import Java from '../imgs/java.svg';
+import JavaScript from '../imgs/javascript.svg';
+import ReactLogo from '../imgs/react.svg';
+import MySql from '../imgs/mysql.svg';
+import Html5 from '../imgs/html5.svg';
+import Css3 from '../imgs/css.svg';
+import Nodejs from '../imgs/nodejs.svg';
+import Mongodb from '../imgs/mongodb.svg';
+import Redux from '../imgs/redux.svg';
+import Spring from '../imgs/spring.svg';
+import Git from '../imgs/github-light.svg';
+import Todos from '../imgs/all.svg';
+import Tailwind from '../imgs/tailwindcss.svg';
 
 // Aquí definimos todas las pestañas o "pill tabs" con sus respectivas tecnologías e íconos.
 const pillTabs = [
