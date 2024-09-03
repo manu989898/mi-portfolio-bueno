@@ -30,22 +30,7 @@ const projects = [
       technologies: ["html5", "css3", "javascript", "react", "tailwind"],
       github: "https://github.com/manu989898/mi-portfolio-bueno"
     },
-    {
-      id: 3,
-      title: "Sistema de Blogs",
-      description: "Un sistema de blogging donde los usuarios pueden crear y compartir artículos. Implementado con React para el frontend y Node.js para el backend.",
-      image: "https://via.placeholder.com/300x200?text=Blog+System",
-      image_description: "Imagen de un sistema de blogs",
-      technologies: ["react", "nodejs", "mongodb"],
-    },
-    {
-        id: 4,
-        title: "Sistema de Blog",
-        description: "Un sistema de blogging donde los usuarios pueden crear y compartir artículos. Implementado con React para el frontend y Node.js para el backend.",
-        image: "https://via.placeholder.com/300x200?text=Blog+System",
-        image_description: "Imagen de un sistema de blogs",
-        technologies: ["mysql"],
-      },
+  
   ];
   
 export default projects;

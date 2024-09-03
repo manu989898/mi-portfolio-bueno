@@ -143,8 +143,8 @@ const Portfolio = () => {
         </header>
 
         <main>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">Sobre mí</h2>
           <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Sobre mí</h2>
             <p className="text-gray-700 dark:text-gray-300">
             Hola, soy Manu. Un desarrollador de aplicaciones web con una pasión por crear experiencias digitales innovadoras y eficientes. Me encanta trabajar en equipo y estoy siempre en busca de nuevos desafíos para mejorar mis habilidades y aprender nuevas tecnologías. El campo que más me gusta es el "backend".
             </p>
@@ -152,7 +152,7 @@ const Portfolio = () => {
 
 
           <section className="mt-8">
-      <h2 className="text-2xl font-bold mb-4">Proyectos </h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Proyectos </h2>
       <PillTabs onTabClick={setSelectedTechnology} />
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
         {filteredProjects.length > 0 ? (
@@ -191,8 +191,8 @@ const Portfolio = () => {
 
 
        
-<section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">Experiencia y Educación</h2>
+<section className="mb-5 text-center">
+            <h2 className="mt-10 text-2xl font-bold mb-8">Experiencia y Educación</h2>
             <div className="container mx-auto w-full">
               <div className="relative wrap overflow-hidden">
                 <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
@@ -207,7 +207,7 @@ const Portfolio = () => {
             </div>
           </section>
           <section className="mb-12">
-  <h2 className="text-2xl font-bold mb-4 ">Habilidades</h2>
+  <h2 className="text-2xl font-bold mb-4 text-center">Habilidades</h2>
   <div className="flex flex-wrap gap-4">
     {[
       { icon: MySVG, name: 'MySQL' },
