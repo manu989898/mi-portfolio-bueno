@@ -1,8 +1,8 @@
 import UrlShort from './imgs/urlshort.JPG';
 import Tienda from './imgs/tienda.JPG';
-import Port from './imgs/port.JPG';
 import VUrlShort from './videos/URLShortener.mp4';
 import WeatherApp from './videos/WeatherApp.mp4'
+import WeatherFoto from './imgs/weatherapp.JPG'
 
 const projects = [
   {
@@ -30,8 +30,8 @@ const projects = [
       id: 2,
       title: "Weather App",
       description: "Una app que usando un sistema de API te muestra el clima de cualquier ciudad del mundo. La app te muestra la temperatura, la sensación térmica, la humedad y la velocidad del viento. Además, te muestra un icono que representa el clima actual de la ciudad.",  
-      image: Port,
-      image_description: Port,
+      image: WeatherFoto,
+      image_description: WeatherFoto,
       technologies: ["html5", "css3", "javascript", "react", "tailwind"],
       github: "https://github.com/manu989898/weather-app",
       video: WeatherApp,
