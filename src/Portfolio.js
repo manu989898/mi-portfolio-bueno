@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Sun, Moon, Briefcase, GraduationCap, } from 'lucide-react';
+import { Github, Linkedin, Mail, Sun, Moon, } from 'lucide-react';
 import MySVG from './imgs/mysql.svg';
 import Css from './imgs/css.svg';
 import Html from './imgs/html5.svg';
@@ -13,67 +13,11 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useNavigate } from 'react-router-dom';
 import projects from './projects';
 import PillTabs from './PillTabs';
+import TimelineData from './TimelineData';
+import TimelineItem from './TimelineItem';
 
-const TimelineItem = ({ year, title, description, icon: Icon, isLeft }) => (
-    <div className={`w-full md:w-1/2 ${isLeft ? 'pr-8' : 'pl-8'}`}>
-      <div className="p-6 rounded-lg shadow bg-white dark:bg-gray-800 h-full overflow-hidden transition-transform duration-300 ease-in-out hover:shadow-lg hover:bg-gray-50 hover:dark:bg-gray-700 transform hover:scale-[1.02] max-w-[97%] mx-auto">
-        <div className="flex items-center mb-2">
-          <Icon size={18} className="mr-2 text-blue-500" />
-          <h3 className="font-bold text-lg text-gray-800 dark:text-white">{year}</h3>
-        </div>
-        <h4 className="text-md font-semibold mb-1 text-gray-700 dark:text-gray-200">{title}</h4>
-        <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
-      </div>
-    </div>
-  );
-  
 
- 
-const timelineData = [
-  {
-    education: {
-      year: "2015",
-      title: "Técnico en Electromecánica de vehiculos",
-      description: "IES Son Pacs 2015 - 2017 Grado medio de FP de mecánico de vehiculos y automoviles.",
-      icon: GraduationCap
-    },
-    experience: {
-      year: "2017",
-      title: "Mecánico oficial concesionario Jaguar & Land Rover",
-      description: "One Motors 2017 - 2019 Mecánico de automoviles, hacia tanto mecánica pesada como mecánica rápida, sistemas de frenos e hidráulica.",
-      icon: Briefcase
-    }
-  },
-  {
-    education: {
-      year: "2017",
-      title: "Certificado Nivel 2, Jaguar & Land Rover",
-      description: "2017 - 2018 Certificación oficial para podere trabajar en categoria superior para la marca Jaguar & Land Rover",
-      icon: GraduationCap
-    },
-    experience: {
-      year: "2019",
-      title: "Mecánico oficial concesionario Hyundai",
-      description: "Proa Automoción 2019 - 2020 Mecánico de automoviles, hacia tanto mecánica pesada como mecánica rápida, sistemas de frenos e hidráulica.",
-      icon: Briefcase
-    }
-  },
-  {
-    education: {
-      year: "2024",
-      title: "Grado superior Desarrollo de aplicaciones web",
-      description: "IES Son Ferrer 2023 - 2025 Grado superior en desarrollo de aplicaciones web. Enfocado en el uso de lenguajes de programación para ese campo.",
-      icon: GraduationCap
-    },
-    experience: {
-      year: "2024",
-      title: "Técnico en sistemas de seguridad y videovigilancia",
-      description: "Alpha Seguridad 2020 - 2024 Tecnico de sistemas de seguridad y videovigilancia para la empresa mas grande de Mallorca.",
-      icon: Briefcase
-    }
-  },
   
-];
 
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -197,7 +141,7 @@ const Portfolio = () => {
               <div className="relative wrap overflow-hidden">
                 <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
                 
-                {timelineData.map((item, index) => (
+                {TimelineData.map((item, index) => (
                   <div key={index} className="mb-8 flex justify-between items-stretch w-full">
                     <TimelineItem {...item.education} isLeft={true} />
                     <TimelineItem {...item.experience} isLeft={false} />
