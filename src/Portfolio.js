@@ -90,7 +90,7 @@ const Portfolio = () => {
         </header>
 
         <main>
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">Sobre mí</h2>
+            <h2 className="mb-4 transition-shadow duration-300 text-2xl font-bold text-center dark:bg-gray-800">Sobre mí</h2>
           <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
             <p className="text-gray-700 dark:text-gray-300">
             Hola, soy Manu. Un desarrollador de aplicaciones web con una pasión por crear experiencias digitales innovadoras y eficientes. Me encanta trabajar en equipo y estoy siempre en busca de nuevos desafíos para mejorar mis habilidades y aprender nuevas tecnologías. El campo que más me gusta es el "backend".
