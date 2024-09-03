@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Sun, Moon, Briefcase, GraduationCap, } from 'lucide-react';
+import { Briefcase, GraduationCap, } from 'lucide-react';
 const timelineData = [
     {
       education: {
