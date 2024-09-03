@@ -191,8 +191,8 @@ const Portfolio = () => {
 
 
        
-<section className="mb-5 text-center">
-            <h2 className="mt-10 text-2xl font-bold mb-8">Experiencia y Educación</h2>
+<section className="mb-5 ">
+            <h2 className="mt-10 text-2xl font-bold mb-8 text-center">Experiencia y Educación</h2>
             <div className="container mx-auto w-full">
               <div className="relative wrap overflow-hidden">
                 <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
