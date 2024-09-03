@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState } from "react";
 import Java from './imgs/java.svg';
 import JavaScript from './imgs/javascript.svg';
 import ReactLogo from './imgs/react.svg';
@@ -12,20 +12,20 @@ import Spring from './imgs/spring.svg';
 import Git from './imgs/github-light.svg';
 import Todos from './imgs/all.svg';
 
-// Aquí definimos todas las pestañas o "pill tabs" con sus respectivas categorías e íconos.
+// Aquí definimos todas las pestañas o "pill tabs" con sus respectivas tecnologías e íconos.
 const pillTabs = [
-  { label: "Todos", category: null, icon: Todos },
-  { label: "Java", category: "java", icon: Java },
-  { label: "Javascript", category: "javascript", icon: JavaScript },
-  { label: "React", category: "react", icon: ReactLogo },
-  { label: "MySQL", category: "mysql", icon: MySql },
-  { label: "HTML5", category: "html5", icon: Html5 },
-  { label: "CSS3", category: "css3", icon: Css3 },
-  { label: "Node.js", category: "nodejs", icon: Nodejs },
-  { label: "MongoDB", category: "mongodb", icon: Mongodb },
-  { label: "Redux", category: "redux", icon: Redux },
-  { label: "Spring", category: "spring", icon: Spring },
-  { label: "Git", category: "git", icon: Git },
+  { label: "Todos", technology: null, icon: Todos },
+  { label: "Java", technology: "java", icon: Java },
+  { label: "Javascript", technology: "javascript", icon: JavaScript },
+  { label: "React", technology: "react", icon: ReactLogo },
+  { label: "MySQL", technology: "mysql", icon: MySql },
+  { label: "HTML5", technology: "html5", icon: Html5 },
+  { label: "CSS3", technology: "css3", icon: Css3 },
+  { label: "Node.js", technology: "nodejs", icon: Nodejs },
+  { label: "MongoDB", technology: "mongodb", icon: Mongodb },
+  { label: "Redux", technology: "redux", icon: Redux },
+  { label: "Spring", technology: "spring", icon: Spring },
+  { label: "Git", technology: "git", icon: Git },
 ];
 
 export function PillTabs({ onTabClick }) {
@@ -43,7 +43,7 @@ export function PillTabs({ onTabClick }) {
         key={tab.label} // Clave única para cada botón de pestaña.
         onMouseEnter={() => setHoveredIndex(i)} // Cambia el índice de "hover" cuando el mouse entra en la pestaña.
         onClick={() => {
-          onTabClick(tab.category); // Llama a la función de selección con la categoría de la pestaña.
+          onTabClick(tab.technology); // Llama a la función de selección con la tecnología de la pestaña.
           setSelectedIndex(i); // Marca esta pestaña como seleccionada.
         }}
         className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${

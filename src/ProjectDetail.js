@@ -64,16 +64,10 @@ const ProjectDetail = () => {
         </header>
 
         <main className="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
-          {project.image && (
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-64 object-cover"
-            />
-          )}
+          
           <div className="p-6">
             <p className="text-lg mb-4 text-gray-900 dark:text-white">{project.description}</p>
-            <img src={project.image_description} alt={project.title} className="w-full  " />
+            <img src={project.image_description} alt={project.title} className="w-full" />
             {/* Sección de tecnologías usadas */}
             <div className="mt-6">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Tecnologías usadas</h2>
@@ -125,4 +119,4 @@ const ProjectDetail = () => {
   );
 };
 
-export default ProjectDetail
+export default ProjectDetail;

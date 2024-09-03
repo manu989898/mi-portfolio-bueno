@@ -82,13 +82,13 @@ const Portfolio = () => {
     setDarkMode(!darkMode);
   };
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate(); // Hook para navegar
 
-  const filteredProjects = selectedCategory
-    ? projects.filter((project) => project.category === selectedCategory)
-    : projects;
+  const [selectedTechnology, setSelectedTechnology] = useState(null);
 
+  const filteredProjects = selectedTechnology
+    ? projects.filter((project) => project.technologies.includes(selectedTechnology))
+    : projects;
   
   
   const [text] = useTypewriter({
@@ -153,7 +153,7 @@ const Portfolio = () => {
 
           <section className="mt-8">
       <h2 className="text-2xl font-bold mb-4">Proyectos </h2>
-      <PillTabs onTabClick={setSelectedCategory} />
+      <PillTabs onTabClick={setSelectedTechnology} />
       <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (
