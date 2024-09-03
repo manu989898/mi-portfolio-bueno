@@ -71,6 +71,15 @@ const ProjectDetail = () => {
           <p className="text-lg mb-4 text-gray-900 dark:text-white" dangerouslySetInnerHTML={{ __html: project.description }} />
           
             <img src={project.image_description} alt={project.title} className="w-full" />
+           
+            <div className="border-b-2 border-gray-300 dark:border-gray-700 my-6 text-2xl font-bold mb-4 text-gray-900 dark:text-white" >DEMO</div>
+            {project.video && (
+              <video controls className="w-full mt-4" style={{ maxHeight: '400px' }}>
+                <source src={project.video} type="video/mp4" />
+                Tu navegador no soporta la etiqueta de video.
+              </video>
+            )}
+            
             {/* Sección de tecnologías usadas */}
             <div className="mt-6">
               <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Tecnologías usadas</h2>

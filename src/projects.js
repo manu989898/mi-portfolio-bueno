@@ -1,6 +1,8 @@
 import UrlShort from './imgs/urlshort.JPG';
 import Tienda from './imgs/tienda.JPG';
 import Port from './imgs/port.JPG';
+import VUrlShort from './videos/URLShortener.mp4';
+
 const projects = [
   {
     id: 0,
@@ -9,7 +11,8 @@ const projects = [
     image: UrlShort,
     image_description: UrlShort,
     technologies: ["javascript", "nodejs", "html5", "css3"],
-    github: "https://github.com/manu989898/acortador-url.git"
+    github: "https://github.com/manu989898/acortador-url.git",
+    video: VUrlShort,
   },
     {
       id: 1,
@@ -18,7 +21,8 @@ const projects = [
       image: Tienda,
       image_description: Tienda,
       technologies: ["java"],
-      github: "https://github.com/manu989898/JavaClase/tree/master/Tienda"
+      github: "https://github.com/manu989898/JavaClase/tree/master/Tienda",
+      video: "",
     
     },
     {
@@ -28,7 +32,8 @@ const projects = [
       image: Port,
       image_description: Port,
       technologies: ["html5", "css3", "javascript", "react", "tailwind"],
-      github: "https://github.com/manu989898/mi-portfolio-bueno"
+      github: "https://github.com/manu989898/mi-portfolio-bueno",
+      video: "",
     },
   
   ];
