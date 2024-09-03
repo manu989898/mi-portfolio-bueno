@@ -11,6 +11,7 @@ import Redux from './imgs/redux.svg';
 import Spring from './imgs/spring.svg';
 import Git from './imgs/github-light.svg';
 import Todos from './imgs/all.svg';
+import Tailwind from './imgs/tailwindcss.svg';
 
 // Aquí definimos todas las pestañas o "pill tabs" con sus respectivas tecnologías e íconos.
 const pillTabs = [
@@ -25,6 +26,7 @@ const pillTabs = [
   { label: "MongoDB", technology: "mongodb", icon: Mongodb },
   { label: "Redux", technology: "redux", icon: Redux },
   { label: "Spring", technology: "spring", icon: Spring },
+  { label: "Tailwind CSS", technology: "tailwind", icon: Tailwind },
   { label: "Git", technology: "git", icon: Git },
 ];
 

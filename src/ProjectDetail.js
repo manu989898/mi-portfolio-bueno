@@ -12,7 +12,8 @@ import Nodejs from './imgs/nodejs.svg';
 import Mongodb from './imgs/mongodb.svg';
 import Redux from './imgs/redux.svg';
 import Spring from './imgs/spring.svg';
-import Git from './imgs/github-light.svg';
+import Git from './imgs/github-light.svg'; 
+import Tailwind from './imgs/tailwindcss.svg';
 
 // Definimos un objeto que asocia tecnologías con sus íconos y nombres.
 const technologies = {
@@ -27,6 +28,7 @@ const technologies = {
   redux: { name: "Redux", icon: Redux },
   spring: { name: "Spring", icon: Spring },
   git: { name: "Git", icon: Git },
+  tailwind: { name: "Tailwind CSS", icon: Tailwind },
 };
 
 const ProjectDetail = () => {
@@ -64,9 +66,10 @@ const ProjectDetail = () => {
         </header>
 
         <main className="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
-          
           <div className="p-6">
-            <p className="text-lg mb-4 text-gray-900 dark:text-white">{project.description}</p>
+             {/* Aquí usamos dangerouslySetInnerHTML para renderizar HTML dentro de la descripción */}
+          <p className="text-lg mb-4 text-gray-900 dark:text-white" dangerouslySetInnerHTML={{ __html: project.description }} />
+          
             <img src={project.image_description} alt={project.title} className="w-full" />
             {/* Sección de tecnologías usadas */}
             <div className="mt-6">
@@ -86,34 +89,53 @@ const ProjectDetail = () => {
           </div>
         </main>
 
-        {/* Navegación entre proyectos */}
-        <div className="flex justify-between mt-12">
-          {prevProject && (
-            <button
-              onClick={() => navigate(`/project/${prevProject.id}`)}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300"
-            >
-              &larr; Proyecto anterior: {prevProject.title}
-            </button>
-          )}
-          {nextProject && (
-            <button
-              onClick={() => navigate(`/project/${nextProject.id}`)}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300"
-            >
-              Proyecto siguiente: {nextProject.title} &rarr;
-            </button>
-          )}
-        </div>
+      
 
-        <footer className="mt-12 text-center">
-          <button
-            onClick={() => navigate('/')}
-            className="mt-4 px-4 py-2 rounded-full bg-gray-700 text-white hover:bg-gray-800 transition-colors duration-300"
-          >
-            Volver al portafolio
-          </button>
-        </footer>
+        {/* Navegación entre proyectos */}
+        <div className="flex flex-col items-center space-y-4">
+  <div className="mt-10 flex justify-between w-full max-w-2xl mb-2">
+    {prevProject && (
+      <button
+        onClick={() => navigate(`/project/${prevProject.id}`)}
+        className="flex items-center gap-2 px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300"
+        style={{ maxWidth: '48%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', height: '50px' }}
+      >
+        &larr; {prevProject.title.slice(0,25)}
+      </button>
+    )}
+    {nextProject && (
+      <button
+        onClick={() => navigate(`/project/${nextProject.id}`)}
+        className="flex items-center gap-2 px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300"
+        style={{ maxWidth: '48%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', height: '50px' }}
+      >
+        {nextProject.title.slice(0,25)} &rarr;
+      </button>
+    )}
+  </div>
+
+  <footer className="flex space-x-4">
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center px-6 py-2 rounded-full bg-gray-700 text-white hover:bg-gray-800 transition-colors duration-300"
+      style={{ height: '50px' }}
+    >
+      <img src={Git} alt="GitHub" className="w-5 h-5 mr-2" />
+      Link a Repositorio
+    </a>
+    <button
+      onClick={() => navigate('/')}
+      className="px-6 py-2 rounded-full bg-gray-700 text-white hover:bg-gray-800 transition-colors duration-300"
+      style={{ height: '50px' }}
+    >
+      Volver al portafolio
+    </button>
+  </footer>
+</div>
+
+
       </div>
     </div>
   );

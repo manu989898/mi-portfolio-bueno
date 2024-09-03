@@ -174,7 +174,7 @@ const Portfolio = () => {
                   {project.title}
                 </h3>
                 <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                  {project.description}
+                  {project.description.slice(0, 100)}...
                 </p>
               </div>
             </div>
