@@ -53,11 +53,15 @@ const Portfolio = () => {
           >
             {darkMode ? <Sun size={24} /> : <Moon size={24} />}
           </button>
+          
+
+        
           <img
             className="mx-auto h-64 w-64 rounded-full border-4 border-blue-500 transition-transform duration-300 hover:scale-110"
             src={MiFoto}
             alt="Tu foto"
           />
+    
           <h1 className="text-3xl font-bold mt-4">
             {text}
             <Cursor cursorStyle='|' />
