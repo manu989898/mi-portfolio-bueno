@@ -97,7 +97,7 @@ const Portfolio = () => {
   });
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-900'}`}>
       <div className="max-w-5xl mx-auto px-6 py-12">
       <header className="text-center mb-12 relative">
           <button
@@ -221,7 +221,7 @@ const Portfolio = () => {
     ].map((skill, index) => (
       <span
         key={index}
-        className="flex flex-col items-center justify-center bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 p-2 rounded-full transition-transform duration-250 hover:scale-110 w-24 h-24"
+        className="flex flex-col items-center justify-center bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 p-2 rounded-full transition-transform duration-250 hover:scale-110 w-24 h-24 border-2 border-blue-500"
       >
         <img src={skill.icon} alt={`${skill.name} Icon`} className="w-8 h-8" />
         <p className="mt-1 text-sm font-semibold text-center">{skill.name}</p>

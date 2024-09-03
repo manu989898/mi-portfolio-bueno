@@ -48,7 +48,7 @@ export function PillTabs({ onTabClick }) {
           onTabClick(tab.technology); // Llama a la función de selección con la tecnología de la pestaña.
           setSelectedIndex(i); // Marca esta pestaña como seleccionada.
         }}
-        className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+        className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap border-2 border-blue-500 ${
           isSelected
             ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
             : "bg-blue-200 text-blue-900 dark:bg-blue-800 dark:text-blue-300"

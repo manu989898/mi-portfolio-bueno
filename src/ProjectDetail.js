@@ -53,7 +53,7 @@ const ProjectDetail = () => {
   const nextProject = projects[currentIndex + 1];
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} transition-colors duration-300`}>
+    <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-900'} transition-colors duration-300`}>
       <div className="max-w-5xl mx-auto px-6 py-12">
         <header className="text-center mb-12 relative">
           <button
