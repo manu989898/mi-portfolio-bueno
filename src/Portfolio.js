@@ -27,6 +27,8 @@ const Portfolio = () => {
     setDarkMode(!darkMode);
   };
 
+
+
   const navigate = useNavigate(); // Hook para navegar
 
   const [selectedTechnology, setSelectedTechnology] = useState(null);
