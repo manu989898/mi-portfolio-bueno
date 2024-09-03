@@ -64,7 +64,7 @@ export function PillTabs({ onTabClick }) {
             : isSelected
             ? '' // Deja el color por defecto si está seleccionada.
             : '', 
-          minWidth: '40px', // Tamaño mínimo del botón.
+          minWidth: '45px', // Tamaño mínimo del botón.
           padding: '10px', // Espaciado interno para asegurar que los íconos y texto no estén muy apretados.
           fontSize: '14px', // Ajusta el tamaño del texto.
         }}
