@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Sun, Moon, } from 'lucide-react';
+import projects from './projects';
+import PillTabs from './PillTabs';
+import TimelineData from './TimelineData';
+import TimelineItem from './TimelineItem';
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useNavigate } from 'react-router-dom';
+// Importación las imágenes de las tecnologías
 import MySVG from './imgs/mysql.svg';
 import Css from './imgs/css.svg';
 import Html from './imgs/html5.svg';
@@ -9,13 +16,6 @@ import ReactLogo from './imgs/react.svg';
 import Tailwind from './imgs/tailwindcss.svg';
 import Git from './imgs/github-light.svg';
 import MiFoto from './imgs/miyo.jpg';
-import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { useNavigate } from 'react-router-dom';
-import projects from './projects';
-import PillTabs from './PillTabs';
-import TimelineData from './TimelineData';
-import TimelineItem from './TimelineItem';
-
 
   
 
