@@ -139,7 +139,7 @@ const Portfolio = () => {
         )}
       </div>
     </section>
-    <h2 className="text-2xl font-bold mt-7 mb-4 text-center">Estadisticas GitHub</h2>
+    <h2 className="text-2xl font-bold mt-7 mb-4 text-center">Estadísticas GitHub</h2>
     <img className='mr-auto ml-auto mt-2 overflow-hidden rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03]'
   src="https://github-readme-stats.vercel.app/api?username=manu989898&show_icons=true&theme=flag-jolly"
   alt="GitHub Stats"
