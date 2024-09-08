@@ -66,7 +66,7 @@ const Portfolio = () => {
             {text}
             <Cursor cursorStyle='|' />
           </h1>
-          <p className="mt-2 text-xl text-gray-600 dark:text-gray-400">Desarrollador Web</p>
+          <p className="mt-2 text-xl text-blue-500 dark:text-gray-400">Desarrollador Web</p>
           <div className="mt-4 flex justify-center space-x-4">
   <a
     href="https://github.com/manu989898"
@@ -140,7 +140,7 @@ const Portfolio = () => {
       </div>
     </section>
     <h2 className="text-2xl font-bold mt-7 mb-4 text-center">Estadisticas GitHub</h2>
-    <img className='mr-auto ml-auto mt-2 bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03]'
+    <img className='mr-auto ml-auto mt-2 overflow-hidden rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03]'
   src="https://github-readme-stats.vercel.app/api?username=manu989898&show_icons=true&theme=flag-jolly"
   alt="GitHub Stats"
   
