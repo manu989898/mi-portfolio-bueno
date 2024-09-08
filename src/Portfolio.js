@@ -153,7 +153,7 @@ const Portfolio = () => {
             <div className="flex justify-center">
               <img
                 className="mr-auto ml-auto mt-2 overflow-hidden rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03]"
-                src="https://github-readme-stats.vercel.app/api?username=manu989898&rank_icon=github"
+                src="https://github-readme-stats.vercel.app/api?username=manu989898&rank_icon=github&locale=es"
                 alt="GitHub Stats"
               />
             </div>
