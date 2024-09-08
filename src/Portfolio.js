@@ -37,7 +37,6 @@ const Portfolio = () => {
     ? projects.filter((project) => project.technologies.includes(selectedTechnology))
     : projects;
   
-  
   const [text] = useTypewriter({
     words: ['Manuel Cuesta Rodriguez'],
     loop: 1,
@@ -53,6 +52,7 @@ const Portfolio = () => {
           >
             {darkMode ? <Sun size={24} /> : <Moon size={24} />}
           </button>
+          
           
 
         
@@ -139,8 +139,11 @@ const Portfolio = () => {
         )}
       </div>
     </section>
-
-
+    <h2 className="text-2xl font-bold mt-7 mb-4 text-center">Estadisticas GitHub</h2>
+    <img className='mr-auto ml-auto mt-2 bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03]'
+  src="https://github-readme-stats.vercel.app/api?username=manu989898&show_icons=true&theme=flag-jolly"
+  alt="GitHub Stats"
+/>
        
 <section className="mb-5 ">
             <h2 className="mt-10 text-2xl font-bold mb-8 text-center">Experiencia y Educación</h2>
