@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../JavaClase"
+		},
+		{
+			"path": "../../2nGsDaw"
+		},
+		{
+			"name": "mi-portfolio-bueno",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"java.debug.settings.onBuildFailureProceed": true
+	}
+}

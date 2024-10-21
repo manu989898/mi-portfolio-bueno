@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, Linkedin, Mail, Sun, Moon } from "lucide-react";
+import { Github, Linkedin, Mail, Sun, Moon, Newspaper } from "lucide-react";
 import projects from "./Dependences/projects";
 import PillTabs from "./Dependences/PillTabs";
 import TimelineData from "./Dependences/TimelineData";
@@ -91,6 +91,13 @@ const Portfolio = () => {
             >
               <Mail size={24} />
             </a>
+            <a 
+              href="/newsletter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110">
+                <Newspaper size={24} />
+              </a>
           </div>
         </header>
 
