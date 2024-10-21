@@ -86,7 +86,7 @@ const Portfolio = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:apkmanu1@gmail.com"
+              href="/contacto"
               className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110"
             >
               <Mail size={24} />
