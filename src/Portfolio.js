@@ -87,7 +87,9 @@ const Portfolio = () => {
             </a>
             <a
               href="/contacto"
+              target="_blank"
               className="text-gray-400 hover:text-blue-500 transition-colors duration-200 transform hover:scale-110"
+
             >
               <Mail size={24} />
             </a>
