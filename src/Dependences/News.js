@@ -27,35 +27,7 @@ const news = [
         description : "Sin duda la tecnología que más está avanzando en los últimos años, y que todo apunta a que va a ser la que más va crecer por lo menos en la próxima década es la Inteligencia Artificial. Y es que todos los nuevos inventos y proyectos acoplan esta tecnología para seguir siendo relevantes, ya que ahora mismo parece que si no tiene IA no es tan innovador o rompedor.",
         image : "https://s10.s3c.es/imag/_v0/1300x709/b/1/1/660x360_MKMYGR.jpg",
         image_description : "Image 4",
-    },
-    {
-        id : 4,
-        title : "Noticia 5",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio sed urna luctus hendrerit. Nullam nec nisl nec turpis",
-        image : "https://via.placeholder.com/150",
-        image_description : "Image 5",
-    },
-    {
-        id : 5,
-        title : "Noticia 6",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio sed urna luctus hendrerit. Nullam nec nisl nec turpis",
-        image : "https://via.placeholder.com/150",
-        image_description : "Image 6",
-    },
-    {
-        id : 6,
-        title : "Noticia 7",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio sed urna luctus hendrerit. Nullam nec nisl nec turpis",
-        image : "https://via.placeholder.com/150",
-        image_description : "Image 7",
-    },
-    {
-        id : 7,
-        title : "Noticia 8",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        image : "https://via.placeholder.com/150",
-        image_description : "Image 8",
-    }
+    }  
 ];
 
 export default news;

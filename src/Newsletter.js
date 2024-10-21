@@ -1,7 +1,6 @@
 import React from "react";
 import news from "./Dependences/News.js";
 
-//se muestren cards como los proyecos del portfolio pero con las noticias
 const Newsletter = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
@@ -24,6 +23,9 @@ const Newsletter = () => {
           </div>
         ))}
       </div>
+      <button className="bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-4">
+        <a href="/">Volver a Inicio</a>
+        </button>
     </div>
   );
 };
