@@ -67,11 +67,10 @@ const ProjectDetail = () => {
 
         <main className="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
           <div className="p-6">
-             {/* Aquí usamos dangerouslySetInnerHTML para renderizar HTML dentro de la descripción */}
+             {/* Aquí usamos dangerouslySetInnerHTML para renderizar HTML dentro de la descripción
+                 Queda pendiente solucionar esto ya que en la descripcion de los proyectos se pueden ver etiquetas <span> */}
           <p className="text-lg mb-4 text-gray-900 dark:text-white" dangerouslySetInnerHTML={{ __html: project.description }} />
-          
             <img src={project.image_description} alt={project.title} className="w-full" />
-           
             <div className="border-b-2 border-gray-300 dark:border-gray-700 my-6 text-2xl font-bold mb-4 text-gray-900 dark:text-white" >DEMO</div>
             {project.video && (
               <video controls className="w-full mt-4" style={{ maxHeight: '400px' }}>

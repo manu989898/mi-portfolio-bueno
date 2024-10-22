@@ -1,5 +1,6 @@
 import React from "react";
 
+// Componente para la sección de Contacto, un formulario básico.
 const Contacto = () => {
     return (
             

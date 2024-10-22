@@ -1,4 +1,5 @@
 
+//constantes que contienen la información de las noticias para luego hacer el .map() en el componente Newsletter
 const news = [
     {
         id : 0,

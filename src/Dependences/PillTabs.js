@@ -31,14 +31,14 @@ const pillTabs = [
 ];
 
 export function PillTabs({ onTabClick }) {
-  // Estados para manejar qué pestaña está seleccionada y cuál está siendo "hovered" (sobrevolada).
+  // Estados para manejar qué pestaña está seleccionada y cuál está siendo "hovered".
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   // Aquí creamos el componente de cada pestaña basándonos en los datos de `pillTabs`.
   const tabsComponents = pillTabs.map((tab, i) => {
-    const isSelected = selectedIndex === i; // Verifica si esta pestaña es la seleccionada.
-    const isHovered = hoveredIndex === i;  // Verifica si esta pestaña está siendo sobrevolada.
+  const isSelected = selectedIndex === i; // Verifica si esta pestaña es la seleccionada.
+  const isHovered = hoveredIndex === i;  // Verifica si esta pestaña está siendo sobrevolada.
 
     return (
       <button
@@ -64,9 +64,9 @@ export function PillTabs({ onTabClick }) {
             : isSelected
             ? '' // Deja el color por defecto si está seleccionada.
             : '', 
-          minWidth: '45px', // Tamaño mínimo del botón.
-          padding: '10px', // Espaciado interno para asegurar que los íconos y texto no estén muy apretados.
-          fontSize: '14px', // Ajusta el tamaño del texto.
+          minWidth: '45px', 
+          padding: '10px', 
+          fontSize: '14px', 
         }}
       >
         <img src={tab.icon} alt={`${tab.label} icon`} className="w-5 h-5 md:w-6 md:h-6" />

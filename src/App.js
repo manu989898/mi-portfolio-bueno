@@ -7,9 +7,11 @@ import Contacto from './contacto.js';
 
 function App() {
   return (
+    // Se añade el componente Router para el enrutamiento
     <Router>
       <div className="App">
         <Routes>
+          {/*Se añaden las rutas de los componentes*/}
           <Route path="/" element={<Portfolio />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/project/:projectId" element={<ProjectDetail />} />

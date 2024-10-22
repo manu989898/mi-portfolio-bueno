@@ -1,6 +1,7 @@
 import React from "react";
 import news from "./Dependences/News.js";
 
+// Componente para la sección de Newsletter Crea unas cards.
 const Newsletter = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">

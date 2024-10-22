@@ -19,22 +19,28 @@ import Git from "./imgs/github-light.svg";
 import MiFoto from "./imgs/miyo.jpg";
 
 const Portfolio = () => {
+
+  //Constante para el modo oscuro usando useState
   const [darkMode, setDarkMode] = useState(false);
 
+  //Función para cambiar el modo oscuro
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
+  //Constante para navegar a la página del proyecto
   const navigate = useNavigate(); 
 
+  //Constante para seleccionar la tecnología para el filtro de proyectos
   const [selectedTechnology, setSelectedTechnology] = useState(null);
 
+  //Constante para filtrar los proyectos
   const filteredProjects = selectedTechnology
     ? projects.filter((project) =>
         project.technologies.includes(selectedTechnology)
       )
     : projects;
 
+  //Constante para el efecto de máquina de escribir (Typewriter) Visto en stackoverflow
   const [text] = useTypewriter({
     words: ["Manuel Cuesta Rodriguez"],
     loop: 1,
