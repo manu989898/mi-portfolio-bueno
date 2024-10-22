@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap, } from 'lucide-react';
+//Estudios y experiencia laboral
 const timelineData = [
     {
       education: {
