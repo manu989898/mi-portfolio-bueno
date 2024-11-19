@@ -9,4 +9,15 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  .accordion-body {
+    overflow: visible !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+  .skill-circle img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
   

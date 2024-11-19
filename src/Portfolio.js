@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Github, Linkedin, Mail, Sun, Moon, Newspaper } from "lucide-react";
+import { Github, Linkedin, Mail, Sun, Moon, Newspaper, Blend } from "lucide-react";
 import projects from "./Dependences/projects";
 import PillTabs from "./Dependences/PillTabs";
 import TimelineData from "./Dependences/TimelineData";
 import TimelineItem from "./Dependences/TimelineItem";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { useNavigate } from "react-router-dom";
+import AccordionSkills from "./Dependences/AccordionSkills";
+
 
 // Importación las imágenes de las tecnologías
 import MySVG from "./imgs/mysql.svg";
@@ -17,6 +19,12 @@ import ReactLogo from "./imgs/react.svg";
 import Tailwind from "./imgs/tailwindcss.svg";
 import Git from "./imgs/github-light.svg";
 import MiFoto from "./imgs/miyo.jpg";
+import Bootstrap from "./imgs/bootstrap.svg";
+import Laravel from "./imgs/laravel.svg";
+import Blender from "./imgs/blender.svg";
+import Copilot from "./imgs/copilot.svg";
+import MySqls from "./imgs/mysql.svg";
+import MongoDb from "./imgs/mongodb.svg";
 
 const Portfolio = () => {
 
@@ -45,6 +53,38 @@ const Portfolio = () => {
     words: ["Manuel Cuesta Rodriguez"],
     loop: 1,
   });
+
+  const skills = [
+    {
+      title: "Desarrollo Web",
+      skills: [
+        { icon: Bootstrap },
+        { icon: Css }, // Aquí utilizas la constante Css que ya tienes importada
+        { icon: Html },
+        { icon: Laravel },
+        { icon: JavaScript },
+        { icon: ReactLogo },
+        { icon: Tailwind },
+      ],
+    },
+    {
+      title: "Bases de Datos",
+      skills: [
+        { icon: MySqls },
+        { icon: MongoDb },
+      ],
+    },
+    {
+      title: "Otras Herramientas",
+      skills: [
+        { icon: Blender },
+        { icon: Copilot },
+        { icon: Git },
+      ],
+    },
+  ];
+  
+  
 
   return (
     <div
@@ -146,7 +186,7 @@ const Portfolio = () => {
                         {project.title}
                       </h3>
                       <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                        {project.description.slice(0, 100)}...
+                        {project.description.slice(0, 50)}...
                       </p>
                     </div>
                   </div>
@@ -160,6 +200,12 @@ const Portfolio = () => {
               )}
             </div>
           </section>
+          <section className="mb-12">
+  <h2 className="text-2xl font-bold mb-4 mt-5 text-center">Habilidades</h2>
+  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300">
+    <AccordionSkills skills={skills} />
+  </div>
+</section>
 
           <section className="mt-8">
             <h2 className="text-2xl font-bold mt-7 mb-4 text-center">
@@ -193,35 +239,9 @@ const Portfolio = () => {
               </div>
             </div>
           </section>
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4 text-center">Habilidades</h2>
-            <div className="flex flex-wrap gap-4">
-              {[
-                { icon: MySVG, name: "MySQL" },
-                { icon: Css, name: "CSS" },
-                { icon: Html, name: "HTML5" },
-                { icon: Java, name: "Java" },
-                { icon: JavaScript, name: "JavaScript" },
-                { icon: ReactLogo, name: "React" },
-                { icon: Tailwind, name: "TailwindCSS" },
-                { icon: Git, name: "Git" },
-              ].map((skill, index) => (
-                <span
-                  key={index}
-                  className="flex flex-col items-center justify-center bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 p-2 rounded-full transition-transform duration-250 hover:scale-110 w-24 h-24 border-2 border-blue-500"
-                >
-                  <img
-                    src={skill.icon}
-                    alt={`${skill.name} Icon`}
-                    className="w-8 h-8"
-                  />
-                  <p className="mt-1 text-sm font-semibold text-center">
-                    {skill.name}
-                  </p>
-                </span>
-              ))}
-            </div>
-          </section>
+          
+  
+
         </main>
       </div>
     </div>

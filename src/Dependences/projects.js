@@ -29,7 +29,7 @@ const projects = [
     {
       id: 2,
       title: "Weather App",
-      description: "Una app que usando un sistema de<strong> API</strong> te muestra el clima de cualquier ciudad del mundo. La app te muestra la temperatura, la sensación térmica, la humedad y la velocidad del viento. Además, te muestra un icono que representa el clima actual de la ciudad.",  
+      description: "Una app que usando un sistema de API te muestra el clima de cualquier ciudad del mundo. La app te muestra la temperatura, la sensación térmica, la humedad y la velocidad del viento. Además, te muestra un icono que representa el clima actual de la ciudad.",  
       image: WeatherFoto,
       image_description: WeatherFoto,
       technologies: ["html5", "css3", "javascript", "react", "tailwind"],
