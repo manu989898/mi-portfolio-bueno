@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, Linkedin, Mail, Sun, Moon, Newspaper, Blend } from "lucide-react";
+import { Github, Linkedin, Mail, Sun, Moon, Newspaper, } from "lucide-react";
 import projects from "./Dependences/projects";
 import PillTabs from "./Dependences/PillTabs";
 import TimelineData from "./Dependences/TimelineData";
@@ -10,7 +10,6 @@ import AccordionSkills from "./Dependences/AccordionSkills";
 
 
 // Importación las imágenes de las tecnologías
-import MySVG from "./imgs/mysql.svg";
 import Css from "./imgs/css.svg";
 import Html from "./imgs/html5.svg";
 import Java from "./imgs/java.svg";
@@ -65,6 +64,7 @@ const Portfolio = () => {
         { icon: JavaScript },
         { icon: ReactLogo },
         { icon: Tailwind },
+        { icon: Java },
       ],
     },
     {
