@@ -6,9 +6,6 @@ import MySql from '../imgs/mysql.svg';
 import Html5 from '../imgs/html5.svg';
 import Css3 from '../imgs/css.svg';
 import Nodejs from '../imgs/nodejs.svg';
-import Mongodb from '../imgs/mongodb.svg';
-import Redux from '../imgs/redux.svg';
-import Spring from '../imgs/spring.svg';
 import Git from '../imgs/github-light.svg';
 import Todos from '../imgs/all.svg';
 import Tailwind from '../imgs/tailwindcss.svg';
@@ -23,53 +20,35 @@ const pillTabs = [
   { label: "HTML5", technology: "html5", icon: Html5 },
   { label: "CSS3", technology: "css3", icon: Css3 },
   { label: "Node.js", technology: "nodejs", icon: Nodejs },
-  { label: "MongoDB", technology: "mongodb", icon: Mongodb },
-  { label: "Redux", technology: "redux", icon: Redux },
-  { label: "Spring", technology: "spring", icon: Spring },
   { label: "Tailwind CSS", technology: "tailwind", icon: Tailwind },
   { label: "Git", technology: "git", icon: Git },
 ];
-
 export function PillTabs({ onTabClick }) {
-  // Estados para manejar qué pestaña está seleccionada y cuál está siendo "hovered".
-  const [hoveredIndex, setHoveredIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Aquí creamos el componente de cada pestaña basándonos en los datos de `pillTabs`.
   const tabsComponents = pillTabs.map((tab, i) => {
-  const isSelected = selectedIndex === i; // Verifica si esta pestaña es la seleccionada.
-  const isHovered = hoveredIndex === i;  // Verifica si esta pestaña está siendo sobrevolada.
+    const isSelected = selectedIndex === i;
 
     return (
       <button
-        key={tab.label} // Clave única para cada botón de pestaña.
-        onMouseEnter={() => setHoveredIndex(i)} // Cambia el índice de "hover" cuando el mouse entra en la pestaña.
+        key={tab.label}
         onClick={() => {
-          onTabClick(tab.technology); // Llama a la función de selección con la tecnología de la pestaña.
-          setSelectedIndex(i); // Marca esta pestaña como seleccionada.
+          onTabClick(tab.technology);
+          setSelectedIndex(i);
         }}
-        className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap border-2 border-blue-500 ${
+        className={`glass relative shadow-lg backdrop-blur-md border border-white/40 flex justify-center items-center rounded-lg transition-transform duration-300 hover:scale-110 ${
           isSelected
-            ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-            : "bg-blue-200 text-blue-900 dark:bg-blue-800 dark:text-blue-300"
+            ? "border-blue-500 dark:border-blue-400"
+            : "border-gray-300 dark:border-gray-600"
         }`}
         style={{
-          backgroundColor: isHovered
-            ? 'rgb(59, 130, 246)' // Cambia el color si el mouse está sobre la pestaña.
-            : isSelected
-            ? '' // Usa el color de Tailwind si la pestaña está seleccionada.
-            : 'rgb(191, 219, 254)', // Color por defecto si la pestaña no está seleccionada ni sobrevolada.
-          color: isHovered
-            ? 'rgb(191, 219, 254)' // Cambia el color del texto si el mouse está sobre la pestaña.
-            : isSelected
-            ? '' // Deja el color por defecto si está seleccionada.
-            : '', 
-          minWidth: '45px', 
-          padding: '10px', 
-          fontSize: '14px', 
+          width: '64px', // Tamaño fijo
+          height: '64px', // Tamaño fijo
+          flexShrink: 0, // Evitar que se encoja
+          flexGrow: 0, // Evitar que se estire
         }}
       >
-        <img src={tab.icon} alt={`${tab.label} icon`} className="w-5 h-5 md:w-6 md:h-6" />
+        <img src={tab.icon} alt={`${tab.label} icon`} className="w-12 h-12" />
       </button>
     );
   });
@@ -77,9 +56,20 @@ export function PillTabs({ onTabClick }) {
   return (
     <div
       className="relative overflow-x-auto scrollbar-hide scrollable-tabs"
+      style={{
+        padding: '10px', // Añadir espacio alrededor para hover
+        overflow: 'visible', // Permitir que los elementos se expandan al escalar
+      }}
     >
-      <div className="flex gap-3 my-3">
-        {tabsComponents} {/* Renderiza todas las pestañas que definimos arriba. */}
+      <div
+        className="flex gap-3 my-3"
+        style={{
+          justifyContent: 'start', // Alinear al principio
+          flexWrap: 'nowrap', // No permitir que las pestañas se vayan a otra línea
+          overflow: 'visible', // Permitir que los elementos escalados no se corten
+        }}
+      >
+        {tabsComponents}
       </div>
     </div>
   );
