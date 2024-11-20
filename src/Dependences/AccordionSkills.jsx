@@ -17,7 +17,7 @@ const AccordionSkills = ({ skills }) => {
         >
           <button
             onClick={() => toggleAccordion(index)}
-            className={`flex justify-between items-center w-full px-4 py-3 text-left bg-blue-100 text-blue-500 font-medium focus:outline-none transition ${
+            className={`flex justify-between items-center w-full px-4 py-3 text-left bg-gray-200 text-blue-500 font-medium focus:outline-none transition ${
               activeIndex === index ? "bg-blue-200" : ""
             }`}
           >
@@ -25,7 +25,7 @@ const AccordionSkills = ({ skills }) => {
             <span>{activeIndex === index ? "▲" : "▼"}</span>
           </button>
           {activeIndex === index && (
-            <div className="p-4 bg-gray-200 grid grid-cols-4 gap-2 dark:bg-gray-900">
+            <div className="p-4 bg-gray-200 grid grid-cols-4 gap-2 dark:bg-gray-800">
               {category.skills.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}

@@ -16,7 +16,7 @@ import Java from "./imgs/java.svg";
 import JavaScript from "./imgs/javascript.svg";
 import ReactLogo from "./imgs/react.svg";
 import Tailwind from "./imgs/tailwindcss.svg";
-import Git from "./imgs/github-light.svg";
+import Git from "./imgs/github-dark.svg";
 import MiFoto from "./imgs/miyo.jpg";
 import Bootstrap from "./imgs/bootstrap.svg";
 import Laravel from "./imgs/laravel.svg";
@@ -28,7 +28,7 @@ import MongoDb from "./imgs/mongodb.svg";
 const Portfolio = () => {
 
   //Constante para el modo oscuro usando useState
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   //Función para cambiar el modo oscuro
   const toggleDarkMode = () => {
@@ -149,12 +149,15 @@ const Portfolio = () => {
           </div>
         </header>
 
-        <main>
-          <h2 className="mb-4 transition-shadow duration-300 text-2xl font-bold text-center dark:bg-gray-800">
+        <main  className={`min-h-screen transition-colors duration-300 ${
+    darkMode ? "dark bg-gray-900 text-white" : "bg-gray-200 text-gray-900"
+  }`}>
+          <h2 className="mb-4 transition-shadow duration-300 text-2xl font-bold text-center ">
             Sobre mí
           </h2>
-          <section className="mb-12 hover:shadow-lg transition-shadow duration-300 p-6 rounded-lg bg-white dark:bg-gray-800">
-            <p className="text-gray-700 dark:text-gray-300">
+          <section className="glass p-6 bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] mb-4">
+          <p className="text-gray-900 dark:text-gray-100 ">
+
               Hola, soy Manu. Un desarrollador de aplicaciones web con una
               pasión por crear experiencias digitales innovadoras y eficientes.
               Me encanta trabajar en equipo y estoy siempre en busca de nuevos
@@ -171,7 +174,7 @@ const Portfolio = () => {
                 filteredProjects.map((project, index) => (
                   <div
                     key={index}
-                    className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] mb-4"
+                    className="glass bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] mb-4"
                     onClick={() => navigate(`/project/${index}`)} // Navegar al proyecto correspondiente
                   >
                     {project.image && (
@@ -200,9 +203,9 @@ const Portfolio = () => {
               )}
             </div>
           </section>
-          <section className="mb-12">
+          <section className=" mb-12">
   <h2 className="text-2xl font-bold mb-4 mt-5 text-center">Habilidades</h2>
-  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300">
+  <div className="glass bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg ">
     <AccordionSkills skills={skills} />
   </div>
 </section>
@@ -224,13 +227,13 @@ const Portfolio = () => {
               Experiencia y Educación
             </h2>
             <div className="container mx-auto w-full">
-              <div className="relative wrap overflow-hidden">
-                <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
+              <div className="relative wrap overflow-visible">
+                <div className=" border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-300 h-full border left-1/2"></div>
 
                 {TimelineData.map((item, index) => (
                   <div
                     key={index}
-                    className="mb-8 flex justify-between items-stretch w-full"
+                    className="mb-8 flex justify-between items-stretch w-full "
                   >
                     <TimelineItem {...item.education} isLeft={true} />
                     <TimelineItem {...item.experience} isLeft={false} />
